@@ -1,0 +1,78 @@
+
+.question{
+    cursor: pointer;
+    width: 64px;
+    height: 64px;
+    background: none;
+    transition: 0.2s;
+    border: none;
+    position: fixed;
+    transform: rotate(0deg);
+    right: 70px;
+    bottom: 20px;
+    animation-iteration-count: infinite;
+    -webkit-animation-name: pulse;
+    animation-name: pulse;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+  }
+  @-webkit-keyframes pulse {
+  0% {
+  -webkit-transform: scale3d(1, 1, 1);
+  transform: scale3d(1, 1, 1);
+  }
+  50% {
+  -webkit-transform: scale3d(1.05, 1.05, 1.05);
+  transform: scale3d(1.05, 1.05, 1.05);
+  }
+  100% {
+  -webkit-transform: scale3d(1, 1, 1);
+  transform: scale3d(1, 1, 1);
+  }
+  }
+  @keyframes pulse {
+  0% {
+  -webkit-transform: scale3d(1, 1, 1);
+  transform: scale3d(1, 1, 1);
+  }
+  50% {
+  -webkit-transform: scale3d(1.05, 1.05, 1.05);
+  transform: scale3d(1.05, 1.05, 1.05);
+  }
+  100% {
+  -webkit-transform: scale3d(1, 1, 1);
+  transform: scale3d(1, 1, 1);
+  }
+  } 
+.question:hover{
+    animation: none;
+    transform: rotate(10deg);
+}
+.prompt{
+    font-size: 15px;
+    position: fixed;
+    right: 80px;
+    bottom: 100px;
+    background: white;
+    padding: 10px;
+    border-radius: 20px;
+    border: #3498db 1px solid;
+}
+.prompt span{
+    font-weight: bold;
+    color: #3498db;
+}
+@media (max-width:480px){
+    .question{
+        right: 15px;
+        bottom: 15px;
+    }
+}
+@media (min-width:481px) and (max-width:1080px){
+    .question{
+        right: 15px;
+        bottom: 15px;
+    }
+}

@@ -1,0 +1,527 @@
+.game{
+    display: flex;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+}
+.maps{
+    width: 80%;
+    position: relative;
+    height: calc(100vh - 60px);
+}
+
+.guessMaps{
+    overflow: hidden;
+    width: 300px;
+    height: 300px;
+    position: absolute;
+    bottom: 50px;
+    right: 50px;
+    z-index: 4;
+    transition: 0.2s;
+    border-radius: 20px;
+}
+.guessMaps:hover{
+    width: 700px;
+    height: 700px;
+}
+.guessBtn{
+    position: absolute;
+    width: 100%;
+    cursor: pointer;
+    color: white;
+    background-color: #3498db;
+    font-size: 20px;
+    border: none;
+    padding: 5px;
+    z-index: ;
+    bottom: 0px;
+}
+.openMaps{
+    display: none;
+    position: absolute;
+    z-index: 4;
+    width: 100%;
+    bottom: 0;
+    font-size: 18px;
+    padding: 10px 0;
+    border: none;
+    background: #3498db;
+    color: white;
+}
+.finish{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 5;
+    background-color: #00000048;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.finishPopUp{
+    position: relative;
+    cursor: pointer;
+    width: 600px;
+    height: 400px;
+    background-size: cover;
+    border-radius: 20px;
+    animation: countries 1s linear;
+    transition: 0.2s;
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    background: rgb(0,144,75);
+background: linear-gradient(0deg, rgba(0,144,75,1) 0%, rgba(183,255,195,1) 100%);
+}
+.finishPopUpRed{
+    position: relative;
+    cursor: pointer;
+    width: 600px;
+    height: 400px;
+    background-size: cover;
+    border-radius: 20px;
+    animation: countries 1s linear;
+    transition: 0.2s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    background: rgb(255,0,0);
+    background: linear-gradient(0deg, rgba(255,0,0,1) 0%, rgba(255,140,140,1) 100%);
+}
+.finishPopUpRed img,.finishPopUp img{
+    display: flex;
+    width: 100px;
+    position: absolute;
+    top: -50px;
+    border-radius: 50%;
+    left: calc(50% - 50px);
+}
+.statisticsPoint{
+    margin-top: 10px;
+    height: 70%;
+    overflow-y: scroll;
+}
+.statisticsPoint div{
+    display: flex;
+    justify-content: space-between;
+}
+.statisticsPoint div p{
+    color: white;
+    font-size: 21px;
+}
+.finishContent{
+    margin-top: 90px;
+}
+.finishContent h3{
+    color: white;
+}
+.finishContent h2{
+    color: rgb(255, 255, 255);
+    font-size: 35px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+.finishContent .statistics{
+    font-size: 21px;
+    color: white;
+    margin-top: 10px;
+}
+.finishContent .popUpBtns{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+.finishContent .popUpBtns button{
+    margin: 0 5px;
+    font-size: 21px;
+    color: white;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    padding: 5px;
+    width: 110px;
+    cursor: pointer;
+    background: #3498db;
+}
+.finishContent .popUpBtns button:hover{
+    opacity: 0.8;
+}
+.finishItWas{
+    display: flex;
+    font-size: 20px;
+}
+.finishItWas h2{
+    font-size: 25px;
+}
+.finishItWas img{
+    width: 35px;
+}
+
+
+.time{
+    width: 200px;
+    font-size: 16px;
+    font-weight: bold;
+    position: absolute;
+    z-index: 4;
+    top: 100px;
+    background: #3498db;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    padding: 5px;
+    color: white;
+    opacity: 0.5;
+    cursor: pointer;
+}
+.time:hover{
+    opacity: 1;
+}
+.deadLine{
+    width: 100%;
+    position: absolute;
+    z-index: 4;
+    height: 10px;
+    width: 100%;
+    display: flex;
+    background: #cbeaff;
+}
+.line{
+    z-index: 4;
+    background: #70bdf0;
+}
+.endRound{
+    position: absolute;
+    z-index: 7;
+    width: 80%;
+    height: 93.8%;
+    background: rgb(190, 237, 255);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.leave{
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+.leave button{
+    width: 80%;
+    font-size: 23px;
+    background: red;
+    border: none;
+    color: white;
+    border-radius: 20px;
+    padding: 10px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+.leave button:hover{
+    background: rgb(214, 0, 0);
+}
+.options{
+    width: 100%;
+    scrollbar-width: thin;
+    scrollbar-color: #3498db #ffffff;
+    overflow-x: scroll;
+    overflow-y: scroll;
+}
+.notice{
+    width: 100%;
+    position: absolute;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.notice div{
+    border-radius: 20px;
+    margin: 20px;
+    padding: 20px;
+    color: white;
+    min-width: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: rgb(255,0,0);
+    background: linear-gradient(0deg, rgba(255,0,0,1) 0%, rgba(255,140,140,1) 100%);
+    transition: 0.2s;
+    animation: notice 4s linear;
+}
+.notice .noticeGreen{
+    background: rgb(0,144,75);
+    background: linear-gradient(0deg, rgba(0,144,75,1) 0%, rgba(183,255,195,1) 100%);
+}
+@keyframes notice {
+    0%{
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    5%{
+        transform: scale(1);
+    }
+    10%{
+        transform: scale(1.1);
+    }
+    15%{
+        opacity: 1;
+        transform: scale(1);
+    }
+    80%{
+        opacity: 0.9;
+    }
+    90%{
+        opacity: 0.5;
+    }
+    100%{
+        opacity: 0;
+    }
+}
+.notice .noticeCorrect{
+    background: #4ef056;
+}
+.notice .noticeBeen{
+    background: #3498db;
+}
+.notice div h2{
+    font-size: 24px;
+}
+.notice div p{
+    font-size: 20px;
+}
+.notGuessed{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+.panel{
+    height: calc(100vh - 60px);
+    width: 20vw;
+    background:  #f0f7fc;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: absolute;
+    right: 0;
+    z-index: 9;
+}
+.attemptGame{
+    width: 90%;
+    min-height: 64px;
+    border-radius: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px;
+    margin: 10px 0;
+    -webkit-box-shadow: 0px 0px 20px -2px rgba(0, 0, 0, 0.2) inset;
+    -moz-box-shadow: 0px 0px 20px -2px rgba(0, 0, 0, 0.2) inset;
+    box-shadow: 0px 0px 20px -2px rgba(0, 0, 0, 0.2) inset;
+}
+.attemptGame img{
+    margin: 5px;
+}
+.players{
+    width: 100%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+.playerGame{
+    width: 100%;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content:space-between;
+    text-align: center;
+}
+.playerName{
+    min-width: 90px;
+    max-width: 90px;
+    font-size: 20px;
+}
+.playerPts{
+    min-width: 90px;
+    max-width: 90px;
+    font-size: 20px;
+}
+.playerGuessed{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    border-radius: 20px;
+    -webkit-box-shadow: 0px 1px 20px -2px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0px 1px 20px -2px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 1px 20px -2px rgba(0, 0, 0, 0.2);
+}
+.playerCountries{
+    width: 35px;
+    border-radius: 50%;
+    height: 35px;
+    display: inline-block;
+    margin: 0 5px;
+    animation: countries 0.4s linear;
+    transition: 0.2s;
+    cursor: pointer;
+    position: relative;
+} 
+.emptyGap{
+    width: 35px;
+    border-radius: 50%;
+    height: 35px;
+    display: flex;
+    margin: 0 5px;
+    animation: countries 0.4s linear;
+    transition: 0.2s;
+    cursor: pointer;
+    background: url('../image/hearth.svg') center center no-repeat;
+    background-size: 85%;
+    /* -webkit-box-shadow: 0px 0px 100px -6px rgba(0, 0, 0, 0.2) inset;
+    -moz-box-shadow: 0px 0px 100px -6px rgba(0, 0, 0, 0.2) inset;
+    box-shadow: 0px 0px 100px -6px rgba(0, 0, 0, 0.2) inset; */
+}
+@keyframes countries {
+    0%{
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    40%{
+        transform: scale(1);
+    }
+    60%{
+        transform: scale(1.1);
+    }
+    100%{
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+.playerPts{
+    font-weight: bold;
+    font-size: 21px;
+    width: 100px;
+    color: rgb(0, 184, 0);
+}
+.showPan{
+    display: none;
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background-size: cover;
+    z-index: 13;
+    background: rgb(255, 255, 255);
+    padding: 5px;
+    border-radius: 10px;
+}
+.showPan img{
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+}
+@media (min-width:481px) and (max-width:1550px){
+    .panel{
+        width: 330px;
+        z-index: 10;
+    }
+    .guessMaps{
+        right: 70px;
+    }
+}
+@media (max-width:481px) {
+    .showPan{
+        width: 40px;
+        height: 40px;
+    }
+    .showPan img{
+        width: 30px;
+        height: 30px;
+    }
+}
+
+@media (max-width:1350px){
+    .panel{
+        width: 100vw;
+        position: absolute;
+        right: -100%;
+        z-index: 10;
+    }
+    .panelShow{
+        width: 40vw;
+        right: 0;
+    }
+    .maps{
+        width: 100%;
+    }
+    .showPan{
+        display: block;
+        position: absolute;
+        right: 20px;
+        top: 20px;
+    }
+    .showPanTrue{
+        right: 42vw;
+    }
+}
+@media (max-width:980px){
+    .panelShow{
+        width: 100vw;
+        right: 0;
+    }
+    .time{
+        width: 120px;
+        font-size: 13px;
+        top: 20px;
+    }
+    .showPanTrue{
+        width: 50%;
+        top: calc(100% - 70px);
+        border-radius: 0;
+        height: 70px;
+        right: 0;
+        top: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .leave{
+        bottom: 0;
+        justify-content: start;
+        height: 70px;
+        margin: 0;
+    }
+    .leave button{
+        width: 50%;
+        height: 70px;
+        border-radius: 0;
+    }
+    .guessMaps{
+        display: none;
+        bottom: 0;
+        right: 0;
+    }
+    .guessMapsOpen{
+        display: flex;
+        height: 100%;
+        width: 100%;
+        right: 0;
+        border-radius: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+    }
+    .guessMaps:hover{
+        width: 100%;
+        height: 100%;
+    }
+    .guessBtn{
+        bottom: 41px;
+        border-bottom: 1px white solid;
+        height: 41px;
+    }
+    .openMaps{
+        display: flex;
+        justify-content: center;
+    }
+}

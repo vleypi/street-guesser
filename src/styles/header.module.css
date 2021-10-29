@@ -1,0 +1,45 @@
+.header{
+    width: 100%;
+    min-width: 400px;
+    background: #3498db;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 50px;
+    z-index: 10;
+}
+
+.header .logo{
+    display: flex;
+    align-items: center;
+}
+.logo img{
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+}
+.logo h2{
+    font-size: 26px;
+    color: white;
+}
+.header .user{
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+.header .user p{
+    color: white;
+    font-size: 20px;
+    margin-right: 20px;
+    font-weight: bold;
+}
+@media (max-width:480px){
+    .header{
+        min-width: 100%;
+        justify-content: center
+    }
+    .header .user{
+        display: none;
+        
+    }
+}

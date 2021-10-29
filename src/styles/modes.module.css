@@ -1,0 +1,241 @@
+.start{
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+}
+
+.start section:nth-child(2){
+    margin-top: 50px;
+}   
+
+.start .mode{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 300px;
+    grid-column-gap: 30px;
+    grid-row-gap: 30px;
+    justify-items: stretch;
+    align-items: stretch;
+}
+
+.start .mode div{
+    background: chartreuse;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+    height: 300px;
+}
+.start .mode div:nth-child(1){
+    background: url('../image/back5.png') center center no-repeat;
+    background-size: 100%;
+}
+
+.start .mode div:nth-child(2){
+    background: url('../image/back4.png') center center no-repeat;
+    background-size: 100%;
+}
+
+.start .mode div:hover{
+    background-size: 120%;
+}
+
+.start .mode div p{
+    font-size: 28px;
+    color: white;
+    width: 100%;
+    height: 100%;
+    background: #3498db59;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s;
+    border-radius: 20px;
+    font-family: 'Fredoka One'
+}
+
+.start .places{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 200px 200px;
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+    justify-items: stretch;
+    align-items: stretch;
+    margin-bottom: 100px;
+}
+
+.start .places div{
+    height: 200px;
+    cursor: pointer;
+    border-radius: 20px;
+    color: white;
+    font-size: 25px;
+    transition: 0.3s;
+
+}
+
+.start .places div p{
+    width: 100%;
+    height: 100%;
+    background: #3498db59;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+    font-family: 'Fredoka One';
+    text-shadow: 0px 2px 3px rgba(150, 150, 150, 1);
+}
+
+.start .places div:hover{
+    transform: scale(1.02);
+}
+
+.start .places div:nth-child(1){
+    background: url('../image/places/world1.jpg') center center no-repeat;
+    background-size: 100%;
+}
+.start .places div:nth-child(2){
+    background: url('../image/places/eu.jpg') center center no-repeat;
+    background-size: 100%;
+
+}
+.start .places div:nth-child(3){
+    background: url('../image/places/russia.jpg') center center no-repeat;
+    background-size: 100%;
+    
+}
+.start .places div:nth-child(4){
+    background: url('../image/places/germany.jpg') center center no-repeat;
+    background-size: 100%;
+    
+}
+.start .places div:nth-child(5){
+    background: url('../image/places/france.jpg') center center no-repeat;
+    background-size: 100%;
+    
+}
+.start .places div:nth-child(6){
+    background: url('../image/places/usa1.jpg') center center no-repeat;
+    background-size: 100%;
+    
+}
+.start .places div:nth-child(7){
+    background: url('../image/places/spain1.jpg') center center no-repeat;
+    background-size: 100%;
+    
+}
+
+
+
+
+
+
+
+@media (max-width:820px){
+    .start{
+        flex-direction: column;
+        margin: 0 auto;
+        margin-top: 50px;
+        width: 95%;
+        height: 55%;
+    }
+    .start .mode{
+        grid-template-columns: 1fr;
+        grid-template-rows: 200px;
+        grid-column-gap: 10px;
+        grid-row-gap: 10px;
+    }
+    .start .mode div{
+        height: 200px;
+    }
+    .start .places{
+        grid-template-columns: 1fr;
+        grid-template-rows: 150px 150px;
+        grid-column-gap: 15px;
+        grid-row-gap: 15px;
+    }
+    .start .places div{
+        height: 150px;
+        background-size: 120%;
+    }
+    .popupContent {
+        width: 300px;
+        height: 200px;
+        padding: 10px;
+        background: white;
+    }
+    .popupContent h2{
+        font-size: 20px;
+    }
+}
+
+@media (min-width:481px) and (max-width:1082px){
+    .start{
+        flex-direction: column;
+        height: 50%;
+    }
+    .start .mode{
+        grid-template-rows: 200px;
+        grid-column-gap: 10px;
+        grid-row-gap: 10px;
+    }
+    .start .mode div{
+        height: 200px;
+    }
+    .start .places{
+        grid-template-rows: 150px 150px;
+        grid-column-gap: 10px;
+        grid-row-gap: 10px;
+    }
+    .start .places div{
+        height: 150px;
+        background-size: 120%;
+    }
+}
+
+.popup{
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.295);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 6;
+}
+.popupContent{
+    width: 500px;
+    height: 350px;
+    padding: 50px;
+    background: linear-gradient(0deg, rgba(52,152,219,1) 0%, rgba(209,255,217,1) 100%);
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.popupContent h2{
+    font-size: 35px;
+    color: white;
+    text-shadow: 1px 2px 7px rgba(150, 150, 150, 1);
+    margin: 10px 0;
+}
+.popupContent p{
+    font-size: 21px;
+    margin: 10px 0;
+    color: white;
+    text-shadow: 1px 2px 7px rgba(150, 150, 150, 1)
+}
+.popupContent button{
+    cursor: pointer;
+    background: rgba(209,255,217,1);
+    border: none;
+    border-radius: 20px;
+    color: white;
+    font-size: 21px;
+    padding: 5px 20px;
+    text-shadow: 1px 2px 7px rgba(150, 150, 150, 1);
+    margin: 0 10px
+}
