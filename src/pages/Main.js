@@ -18,15 +18,15 @@ const Main = () => {
                 <Logo style={style} routeHandler={routeHandler} profile={profile}/>
                 <div className={style.about}>
                     <div className={style.animation}>
-                        <h2>MapsGuesser</h2>
-                        <p className={style.ph}>игра для настоящих географов!</p>
+                        <h2>StreetGuesser</h2>
+                        <p className={style.ph}>This is a game for real geographers!</p>
                     </div>
                     <div className={style.start}>
                         <div onClick={routeHandler} className={style.box}>
-                            <p>Начать играть!</p>
+                            <p>Start</p>
                         </div>
                         <div onClick={routeHandler} className={style.box}>
-                            <p>Иследовать мир!</p>
+                            <p>Explore the world!</p>
                         </div>
                     </div>
                 </div>

@@ -34,7 +34,7 @@ const Auth = () => {
                 </div>
                 <div onClick={()=>redirect.push('/')} className={style.authMap}>
                     <div>
-                        <h2>MapsGuesser</h2>
+                        <h2>StreetGuesser</h2>
                     </div>
                 </div>
             </div>

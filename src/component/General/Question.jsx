@@ -17,7 +17,7 @@ const Question = React.memo(() => {
     },[])
     return (
         <>
-            {promt && <div className={style.prompt}>Что такое <span>MapsGuesser?</span></div>}
+            {promt && <div className={style.prompt}>Что такое <span>StreetGuesser?</span></div>}
             <img ref={ref} src={question} onClick={()=>history.push('/rules')} className={style.question} alt="question"/>
         </>
     )

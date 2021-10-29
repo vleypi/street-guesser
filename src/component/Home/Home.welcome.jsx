@@ -1,7 +1,7 @@
 import React from 'react'
 
 const HomeWelcome = ({style}) => {
-    const modes = ['с друзьями', 'в одиночку','местность','новые страны','популярные места']
+    const modes = ['with friends', 'alone','the terrain','new countries','popular places']
     const [mode,setMode] = React.useState(0)
     const [animation,setAnimation] = React.useState(true)
     React.useEffect(()=>{
@@ -21,8 +21,8 @@ const HomeWelcome = ({style}) => {
     },[mode])
     return (
         <div className={style.welcome}>
-            <h2>Добро пожаловать в <span>MapsGuesser!</span></h2>
-            <p>Угадывайте <span className={animation ? style.animation : ''}>{modes[mode === 5 ? 0 : mode]}</span> , получайте удовольствие</p>
+            <h2>Welcome to <span>StreetGuesser!</span></h2>
+            <p>Guess  <span className={animation ? style.animation : ''}>{modes[mode === 5 ? 0 : mode]}</span> and have fun</p>
         </div>
     )
 }

@@ -12,7 +12,6 @@ import Game from './component/Game/Game'
 import Lobby from './pages/Lobby'
 import Mode from './pages/Mode'
 import ConfirmWarn from './component/General/ConfirmWarn'
-import Popup from './component/Modes/Popup'
 
 const App = () => {
   useAuth()

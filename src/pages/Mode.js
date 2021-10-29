@@ -89,7 +89,7 @@ const Mode = () => {
             {searching && 
                 <div className={`${searching === 'animationOpen' && style.loaderOpen} ${searching === 'animationClose' && style.loaderClose}`}>
                     <div className={style.loaderContent}>
-                        <h2>MapsGuesser</h2>
+                        <h2>StreetGuesser</h2>
                         <div className={style.loaderStartExpect}></div>
                     </div>
                 </div>

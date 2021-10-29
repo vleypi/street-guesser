@@ -45,7 +45,7 @@ const Warn = () => {
     return (
         <div className={style.warn}>
             <div className={style.info}>
-                <h2>MapsGuesser <span>Warning</span></h2>
+                <h2>StreetGuesser <span>Warning</span></h2>
                 <h3>Вы уже находитесь в <span>LOBBY#{state.profile.warn}</span></h3>
                 <p>Чтобы продолжить, вам нужно выйти с него, в другом браузере/окне.</p>
                 <p>Если вы считаете, что это ошибка - нажмите на кнопку "Выйти с Лобби",</p>

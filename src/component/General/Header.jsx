@@ -10,8 +10,8 @@ const Header = () => {
     return (
         <div className={style.header}>
             <div className={style.logo} onClick={()=>history.push('/home')}>
-                <img src={logo} alt="MapsGuesser" />
-                <h2>MapsGuesser</h2>
+                <img src={logo} alt="StreetGuesser" />
+                <h2>StreetGuesser</h2>
             </div>
             <div className={style.user}>
                 <p>{profile.name}</p>
