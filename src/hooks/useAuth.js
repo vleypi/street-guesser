@@ -6,7 +6,7 @@ import { userConnect, userLeave } from "../redux/actions/lobby";
 import { setGame } from "../redux/actions/game";
 import { useHistory } from "react-router";
 
-export const socket = io("http://localhost:5000/", {transports: [ "websocket" ]});
+export const socket = io("https://street-guesser.herokuapp.com/", {transports: [ "websocket" ]});
 
 export const useAuth = () =>{
     const dispatch = useDispatch()

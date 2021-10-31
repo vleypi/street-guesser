@@ -46,7 +46,7 @@ export const setWarn = (warn) =>({
 })
 
 export const setProfileThunk = (JWT,id) => (dispatch) =>{
-    fetch('/api/auth/profile',{
+    fetch('https://street-guesser.herokuapp.com/api/auth/profile',{
         method: 'GET',
         body: null,
         headers:{
@@ -57,14 +57,14 @@ export const setProfileThunk = (JWT,id) => (dispatch) =>{
     .then((res)=>res.json())
     .then((data)=>{
         if(data.message == 'Unauthorized'){
-            fetch('/api/auth/refresh',{method:'GET',body: null}).then((res)=>res.json())
+            fetch('https://street-guesser.herokuapp.com/api/auth/refresh',{method:'GET',body: null}).then((res)=>res.json())
             .then((ref)=>{
                 if(ref.message === 'UnauthorizedRefresh'){
                     localStorage.removeItem('data')
                     dispatch(setProfile(null,null,null,null,null,null))
                 }
                 else if(!ref.message){
-                    fetch('/api/auth/profile',{
+                    fetch('https://street-guesser.herokuapp.com/api/auth/profile',{
                         method: 'GET',
                         body: null,
                         headers:{

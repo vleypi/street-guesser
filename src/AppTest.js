@@ -36,7 +36,7 @@ const AppTest = () => {
           {!state.profile.isActivated && <Redirect to="/" />}
           <Route path="/create/:mode/:option" exact component={Mode} />}
           <Route path="/lobby" exact component={Lobby}/>
-          <Route path="/test" component={Test}/>
+          {/* <Route path="/test" component={Test}/> */}
           <Route path="/rules" exact component={Rules} />
           {state.game.locs && <Route path="/game" component={Game}/>}
           <Route path="*" component={ErrorPage} />

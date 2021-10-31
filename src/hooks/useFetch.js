@@ -14,7 +14,7 @@ export const useFetch = () =>{
             },5000)
         }
     },[error])
-    const request = React.useCallback(async (url,method="GET",body=null,headers={})=>{
+    const request = React.useCallback(async ('https://street-guesser.herokuapp.com' + url,method="GET",body=null,headers={})=>{
         try{
             if(body){
                 body=JSON.stringify(body)
