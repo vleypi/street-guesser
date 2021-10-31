@@ -17,7 +17,7 @@ const Game = React.memo(() => {
     const state = useSelector(state => state)
     const history = useHistory()
     const {isLoaded} = useLoadScript({
-        googleMapsApiKey: '',
+        googleMapsApiKey: state.game.API,
         language: 'en'
     })
     React.useEffect(()=>{
