@@ -39,7 +39,6 @@ const AppTest = () => {
           {/* <Route path="/test" component={Test}/> */}
           <Route path="/rules" exact component={Rules} />
           {state.game.locs && <Route path="/game" component={Game}/>}
-          <Route path="*" component={ErrorPage} />
         </Switch> :
         <Switch>
           <Route path="/auth" exact component={Auth} />
