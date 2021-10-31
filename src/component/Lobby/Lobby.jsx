@@ -10,7 +10,7 @@ const Lobby = React.memo(({style}) => {
     const history = useHistory()
     React.useEffect(()=>{
         if(!lobby){
-            history.push('/home')
+            history.push('/')
         }
     },[lobby])
     return (

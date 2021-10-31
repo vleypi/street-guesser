@@ -19,14 +19,15 @@ const Mode = () => {
     const {request} = useFetch()
     const [searching,setSearching] = React.useState(false)
     React.useEffect(()=>{
-        if(modes.findIndex(it=>{return it.mode === params.mode}) === -1 || places.findIndex(it=>{return it.mode === params.mode}) === -1){
-            
+        if(places.findIndex(it=>it.option === params.option) === -1){
+            history.replace('/404')
         }
-        else if(places.findIndex(it=>{return it.option === params.option}) === -1 || modes.findIndex(it=>{return it.option === params.option})){
-            
+        else if(modes.findIndex(it=>it.mode === params.mode) === -1){
+            history.replace('/404')
         }
     },[modes,places,params])
     const seacrh = async (it) =>{
+            history.block()
             setSearching('animationOpen')
             setTimeout(async ()=>{
                 try{
@@ -62,17 +63,26 @@ const Mode = () => {
                         })
                     }
                     setTimeout(()=>{
+                        const unblock = history.block(()=>{
+                            unblock()
+                        })
                         setSearching(false)
                         if(it === 'multi'){
-                            history.replace('/home/lobby')
+                            unblock()
+                            history.replace('/lobby')
                         }
                         else{
-                            history.replace('/home/game')
+                            unblock()
+                            history.replace('/game')
                         }
-                    },180)
+                    },800)
                 }
                 catch(err){
+                    const unblock = history.block(()=>{
+                        unblock()
+                    })
                     setTimeout(()=>{
+                        unblock()
                         setSearching(false)
                     },150)
                 }

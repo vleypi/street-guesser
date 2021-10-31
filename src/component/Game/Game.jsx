@@ -10,18 +10,18 @@ import FinishBattle from './Options/Battle/Finish'
 import FinishPoints from './Options/Points/Finish'
 import Panel from './Options/Panel'
 import TimeLine from './Options/TimeLine'
+import { useHistory } from 'react-router'
 
 const Game = React.memo(() => {
     const dispatch = useDispatch()
     const state = useSelector(state => state)
+    const history = useHistory()
     const {isLoaded} = useLoadScript({
-        googleMapsApiKey: state.game.API,
+        googleMapsApiKey: '',
         language: 'en'
     })
-    const onLoad = (e) =>{
-        
-    }
     React.useEffect(()=>{
+        history.block()
         dispatch(setPlayers(state.lobby.lobby.users))
     },[])
     return (
@@ -36,7 +36,7 @@ const Game = React.memo(() => {
                         <GoogleMap
                             mapContainerStyle={mapContainerStyle}
                             zoom={2}
-                            onLoad={onLoad}
+
                         >
                             <StreetView />
                         </GoogleMap>

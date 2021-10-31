@@ -1,7 +1,7 @@
 import { useHistory } from "react-router"
 
 const initialState = {
-    JWT: null,
+    JWT: true,
     id: null,
     name: null,
     premium: false,

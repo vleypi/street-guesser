@@ -12,7 +12,6 @@ const TimeLine = () => {
         if(time > 0){
             setTimeout(()=>{
                 setTime(initialTime - ((Date.now()-dif) - game.time))
-                console.log(time)
             },50)
         }
     },[time])

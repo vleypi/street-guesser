@@ -10,7 +10,7 @@ const Main = () => {
     const route = useHistory()
     const routeHandler = (e) =>{
         e.preventDefault()
-        route.push(profile.id ? '/home' : '/auth')
+        route.push(profile.id ? '/' : '/auth')
     }
     return (
         <div className={style.main}>

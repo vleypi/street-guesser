@@ -9,6 +9,7 @@ const Button = ({markers,style}) => {
     const [disabled,setDisabled] = React.useState(false)
     const [attempts,setAttenpts] = React.useState(false)
     const me = state.game.players.find((it)=>it._id === state.profile.id)
+    let timeout;
     const guess = async () =>{
             setDisabled(true)
             const data = await request('/api/game/guess','POST',{
@@ -55,23 +56,28 @@ const Button = ({markers,style}) => {
                     players: state.game.players,
                 })
             }
-            setTimeout(()=>{
+            timeout = setTimeout(()=>{
                 setDisabled(false)
             },2000)
     }
     React.useEffect(()=>{
         if(me){
-            if(me.tries.length === 3 || me.tries.findIndex(it=>{return it.type === 'guessed'}) !== -1){
+            if(state.game.mode === 'BattleRoyale' && me.tries.length > 2 || me.tries.findIndex(it=>{return it.type === 'guessed'}) !== -1){
+                clearTimeout(timeout)
                 setAttenpts(true)
             }
-            else if(me.tries.length === 1 && state.game.mode === 'Points'){
+            else if(me.tries.length > 0 && state.game.mode === 'Points'){
+                clearTimeout(timeout)
                 setAttenpts(true)
-            }
-            else{
-                setAttenpts(false)
             }
         }
     },[state.game.players])
+    React.useEffect(()=>{
+        socket.on('roundGame',msg=>{
+            setAttenpts(false)
+            setDisabled(false)
+        })
+    },[])
     return (
         <>
         {!attempts &&

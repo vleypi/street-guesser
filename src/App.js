@@ -25,6 +25,7 @@ const App = () => {
     })
   },[history])
   return (
+    <>
       <Switch>
         <Route path="/"  exact component={Main}/>
         {state.profile.JWT ?
@@ -48,7 +49,6 @@ const App = () => {
                     </> :
                     <>
                       <Route path="/home/game" exact component={Game}/>
-                      <Route path="*" exact component={ErrorComp} />
                     </>
                   }
                 </Switch>:
@@ -61,7 +61,9 @@ const App = () => {
             <Route path="/auth/newpassword/:link" exact component={Auth} />
           </Switch>
         }
+        
       </Switch>
+    </>
   )
 }
 
@@ -70,7 +72,7 @@ export default App
 const ErrorComp = () =>{
   return(
     <div>
-
+      ffsdfdsfds
     </div>
   )
 }

@@ -24,6 +24,7 @@
     cursor: pointer;
     transition: 0.3s;
     height: 300px;
+    
 }
 .start .mode div:nth-child(1){
     background: url('../image/back5.png') center center no-repeat;
@@ -62,6 +63,7 @@
     justify-items: stretch;
     align-items: stretch;
     margin-bottom: 100px;
+    
 }
 
 .start .places div{
@@ -71,7 +73,6 @@
     color: white;
     font-size: 25px;
     transition: 0.3s;
-
 }
 
 .start .places div p{

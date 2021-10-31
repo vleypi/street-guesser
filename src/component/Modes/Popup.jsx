@@ -10,6 +10,7 @@ const Popup = ({popup,popupHandler}) => {
             {popup.reason === 'activate' && <Activate />}
             {popup.reason === 'lobby' && <Lobby history={history}/>}
             {popup.reason === 'singleAndBattleRoyale' && <SingleAndBattleRoyale  history={history}/>}
+            {popup.reason === 'signin' && <Signin history={history}/>}
         </div>
     )
 }
@@ -38,7 +39,7 @@ const Lobby = ({history}) =>{
             <p>You need to exit the lobby if you want to continue</p>
             <div>
                 <button onClick={leave}>Exit</button>
-                <button onClick={()=>history.push('/home/lobby')}>Return</button>
+                <button onClick={()=>history.push('/lobby')}>Return</button>
             </div>
         </div>
     )
@@ -51,6 +52,19 @@ const SingleAndBattleRoyale = () =>{
             <p style={{marginBottom: '20px'}}>For a single player game, you need to select the "Points" mode.</p>
             <div>
                 <button>Okay</button> 
+            </div>
+        </div>
+    )
+}
+
+const Signin = ({history}) =>{
+    return(
+        <div className={style.popupContent}>
+            <h2>Sign in to play</h2>
+            <p style={{marginBottom: '20px'}}></p>
+            <div>
+                <button onClick={()=>history.push('/auth')}>Sign in</button> 
+                <button>Later</button> 
             </div>
         </div>
     )

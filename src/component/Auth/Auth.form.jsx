@@ -15,7 +15,7 @@ const AuthForm = ({style,route,redirect}) => {
                 const data = await request('/api/auth/sign','POST',{password: int.password,name: int.text,email: int.email})
                 loginAuth(data.JWT,data.id)
                 setInt({password: '',text: '',email: ''})
-                redirect.replace('/home')
+                redirect.replace('/')
             }
         }
         catch(err){
@@ -33,7 +33,7 @@ const AuthForm = ({style,route,redirect}) => {
                 const data = await request('/api/auth/log','POST',{password: int.password,email: int.email})
                 loginAuth(data.JWT,data.id)
                 setInt({password: '',text: '',email: ''})
-                redirect.replace('/home')
+                redirect.replace('/')
             }
         }
         catch(err){

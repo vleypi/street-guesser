@@ -5,8 +5,8 @@ import style from '../../styles/modes.module.css'
 import Popup from './Popup'
 
 export const modes = [
-    {name: 'Battle Royale',mode: 'BattleRoyale',option: 'world'},
-    {name: 'Battle Distance',mode: 'Points',option: 'world'},
+    {name: 'Battle Royale',option: 'world',mode: 'BattleRoyale'},
+    {name: 'Battle Distance',option: 'world',mode: 'Points'},
     
 ]
 export const places = [
@@ -30,7 +30,10 @@ const Modes = () => {
             setPop({popup: true,reason: 'lobby'})
         }
         else if(profile.isActivated){
-            history.push('/home/create/'+it.mode+'/'+it.option)
+            history.push('/create/'+it.mode+'/'+it.option)
+        }
+        else if(!profile.JWT){
+            setPop({popup: true,reason: 'signin'})
         }
         else{
             setPop({popup: true,reason: 'activate'})
@@ -39,6 +42,7 @@ const Modes = () => {
     const popupHandler = (reason) =>{
         setPop({popup: !popup})
     }
+
     return (
         <>
         {popup.popup && <Popup popup={popup} popupHandler={popupHandler}/>}

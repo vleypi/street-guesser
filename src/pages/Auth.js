@@ -4,8 +4,10 @@ import style from '../styles/auth.module.css'
 import { useHistory,useParams } from 'react-router'
 import ForgotForm from '../component/Auth/Forgot.form'
 import NewPassword from '../component/Auth/New.form.password'
+import { useSelector } from 'react-redux'
 
 const Auth = () => {
+    const profile = useSelector(({profile})=>profile)
     const [route,setRoute] = React.useState('log')
     const redirect = useHistory()
     const params = useParams()
