@@ -14,13 +14,13 @@ export const useFetch = () =>{
             },5000)
         }
     },[error])
-    const request = React.useCallback(async ('https://street-guesser.herokuapp.com' + url,method="GET",body=null,headers={})=>{
+    const request = React.useCallback(async (url,method="GET",body=null,headers={})=>{
         try{
             if(body){
                 body=JSON.stringify(body)
             }
             headers["Content-Type"]="application/json"
-            const response = await fetch(url,{method,body,headers})
+            const response = await fetch('https://street-guesser.herokuapp.com' + url,{method,body,headers})
             const data = await response.json()
             if(data.check){
                 dispatch(setWarn(data.check))
@@ -32,7 +32,6 @@ export const useFetch = () =>{
         }
         catch(err){
             setError(err.message)
-            console.log(err.message)
             if(err.message === 'Unauthorized'){
                 const refresh = await request('/api/auth/refresh', 'GET')
                 if(refresh.message === 'UnauthorizedRefresh'){
