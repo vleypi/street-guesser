@@ -48,7 +48,7 @@ const App = () => {
                       <Route path="*" exact component={ErrorComp} />
                     </> :
                     <>
-                      <Route path="/home/game" exact component={Game}/>
+                      <Route path="/game" exact component={Game}/>
                     </>
                   }
                 </Switch>:

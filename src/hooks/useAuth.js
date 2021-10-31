@@ -35,7 +35,7 @@ export const useAuth = () =>{
         socket.on('roundGame',msg=>{
             dispatch(setGame(msg.loc,msg.locs,msg.rd,msg.pls,msg.mode,msg.time))
             if(msg.locs){
-                history.replace('/home/game')
+                history.replace('/game')
             }
         })
         socket.on('userConnect',msg=>{

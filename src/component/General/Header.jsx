@@ -9,7 +9,7 @@ const Header = () => {
     const history = useHistory()
     return (
         <div className={style.header}>
-            <div className={style.logo} onClick={()=>history.push('/home')}>
+            <div className={style.logo} onClick={()=>history.push('/')}>
                 <img src={logo} alt="StreetGuesser" />
                 <h2>StreetGuesser</h2>
             </div>
