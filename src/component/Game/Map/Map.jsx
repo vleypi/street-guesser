@@ -86,8 +86,8 @@ const Map = ({style}) => {
         </div>
         <button onClick={()=>setOpen({...open, open: !open.open})} className={style.openMaps}>
             {open.open ?
-                 'Закрыть карту':
-                'Открыть карту'
+                 'Close open':
+                'Open map'
             }
         </button>
         </>

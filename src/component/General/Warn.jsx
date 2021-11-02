@@ -46,13 +46,12 @@ const Warn = () => {
         <div className={style.warn}>
             <div className={style.info}>
                 <h2>StreetGuesser <span>Warning</span></h2>
-                <h3>Вы уже находитесь в <span>LOBBY#{state.profile.warn}</span></h3>
-                <p>Чтобы продолжить, вам нужно выйти с него, в другом браузере/окне.</p>
-                <p>Если вы считаете, что это ошибка - нажмите на кнопку "Выйти с Лобби",</p>
-                <p>при это вы автоматически выйдите с <span>LOBBY#{state.profile.warn}</span></p>
+                <h3>You are already in <span>LOBBY#{state.profile.warn}</span></h3>
+                <p>To continue, you need to log out of it, in a different browser / window.</p>
+                <p>If you think this is a mistake, click the "Exit Lobby" button</p>
                 <div>
-                    <button disabled={disabled} onClick={updateWarn}>Обновить</button>
-                    <button disabled={disabled} onClick={quitLobby}>Выйти с Лобби</button>
+                    <button disabled={disabled} onClick={updateWarn}>Refresh</button>
+                    <button disabled={disabled} onClick={quitLobby}>Exit the lobby</button>
                 </div>
             </div>
         </div>

@@ -21,7 +21,7 @@ const TimeLine = () => {
             setTime(120000)
         }
         else if(game.mode === 'BattleRoyale'){ 
-            setInitialTime(260000)
+            setInitialTime(260000 * (1 - ((game.rd) * 0.1)))
             setTime(260000 * (1 - ((game.rd) * 0.1)))
         }
     },[game.loc])
@@ -32,18 +32,17 @@ const TimeLine = () => {
     },[])
     return (
         <>
-        {time > 0 ?
+        {time > 0 &&
             <>
                 <div className={style.time}>
-                    <p>Режим - {game.mode}</p>
-                    <p>Раунд - {game.rd}</p>
+                    <p>Mode - {game.mode}</p>
+                    <p>Round - {game.rd}</p>
                     <p>{new Date(time).getMinutes()}:{new Date(time).getSeconds()}</p>
                 </div>
                 <div className={style.deadLine}>
                     <div style={{width: `${(time / initialTime)*100}%`}} className={style.line}></div>
                 </div>
-            </> :
-            <></>
+            </> 
         }
         </>
     )

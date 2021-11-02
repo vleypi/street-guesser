@@ -25,7 +25,7 @@ const Leave = () => {
     }
     return (
         <div className={style.leave}>
-            <button onClick={leave}>Покинуть</button>
+            <button onClick={leave}>Exit</button>
         </div>
     )
 }

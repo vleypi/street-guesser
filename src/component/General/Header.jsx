@@ -14,8 +14,10 @@ const Header = () => {
                 <h2>StreetGuesser</h2>
             </div>
             <div className={style.user}>
-                <p>{profile.name}</p>
-                {/* AIzaSyAwsENISVxRiSpCYhnhFX_dXJjFftHDHZM */}
+                {profile.JWT ?
+                    <p>{profile.name}</p> :
+                    <button onClick={()=>history.replace('/push')} className={style.signin}>Sign in</button>
+                }
             </div>
         </div>
     )

@@ -1,3 +1,18 @@
+@font-face {
+  font-family: "Fredoka One";
+  src: url("./fonts/Fredoka_One/FredokaOne-Regular.ttf");
+  src: url("./fonts/Fredoka_One/FredokaOne-Regular.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "Balsamiq Sans";
+  src: url("./fonts/Balsamiq_Sans/BalsamiqSans-Bold.ttf");
+  src: url("./fonts/Balsamiq_Sans/BalsamiqSans-Bold.ttf") format("truetype");
+  font-weight: bold;
+}
+
 
 body {
   margin: 0;
@@ -6,7 +21,9 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  scroll-behavior: smooth
+  scroll-behavior: smooth;
+  background: rgb(255,255,255);
+    background: linear-gradient(137deg, rgba(255,255,255,1) 0%, rgba(231,244,254,1) 99%, rgba(191,225,252,1) 100%, rgba(33,150,243,1) 100%);
 }
 
 code {
@@ -23,6 +40,9 @@ code {
   -moz-user-select: none; 
   -ms-user-select: none;       
   user-select: none;
+  outline: none;
+  font-family: 'Fredoka One', 'Balsamiq Sans', sans-serif;
+  font-weight: 200;
 }
 /* хром, сафари */
 *::-webkit-scrollbar { width: 0; }

@@ -13,7 +13,7 @@ const NotGuessed = ({style}) => {
     }))]
     return (
         <div className={style.notGuessed}>
-            <h3>Неудачные попытки:</h3>
+            <h3>Failed attempts:</h3>
             <div className={style.attemptGame}>
                 {notGuessed.map((it,index)=>(
                     <img 

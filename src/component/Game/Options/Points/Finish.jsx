@@ -41,13 +41,13 @@ const Finish = ({style}) => {
                             {vis.type === 'win' &&
                                 <>
                                 {vis.info[0]._id == id ?
-                                    <h2>Ты побеждаешь!</h2> :
-                                    <h2>{vis.info[0]._id} побеждает!</h2>
+                                    <h2>You won!</h2> :
+                                    <h2>{vis.info[0]._id} won!</h2>
                                 }
                                 </>  
                             }
                             {vis.type === 'end'  &&
-                                <h2>Раунд {rd}/10</h2> 
+                                <h2>Round {rd}/10</h2> 
                             }
                             <div className={style.statisticsPoint}>
                                 {vis.info.map((it,index)=>(
