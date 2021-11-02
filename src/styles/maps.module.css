@@ -7,7 +7,7 @@
 .maps{
     width: 80%;
     position: relative;
-    height: calc(100vh - 60px);
+    height: calc(100vh - 51px);
 }
 
 .guessMaps{
@@ -121,7 +121,7 @@ background: linear-gradient(0deg, rgba(0,144,75,1) 0%, rgba(183,255,195,1) 100%)
     color: rgb(255, 255, 255);
     font-size: 35px;
     text-transform: uppercase;
-    font-weight: bold;
+
 }
 .finishContent .statistics{
     font-size: 21px;
@@ -163,7 +163,6 @@ background: linear-gradient(0deg, rgba(0,144,75,1) 0%, rgba(183,255,195,1) 100%)
 .time{
     width: 200px;
     font-size: 16px;
-    font-weight: bold;
     position: absolute;
     z-index: 4;
     top: 100px;
@@ -298,7 +297,7 @@ background: linear-gradient(0deg, rgba(0,144,75,1) 0%, rgba(183,255,195,1) 100%)
     align-items: center;
 }
 .panel{
-    height: calc(100vh - 60px);
+    height: calc(100vh - 51px);
     width: 20vw;
     background:  #f0f7fc;
     display: flex;
@@ -399,7 +398,6 @@ background: linear-gradient(0deg, rgba(0,144,75,1) 0%, rgba(183,255,195,1) 100%)
     }
 }
 .playerPts{
-    font-weight: bold;
     font-size: 21px;
     width: 100px;
     color: rgb(0, 184, 0);

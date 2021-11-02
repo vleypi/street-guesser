@@ -82,7 +82,7 @@ const Button = ({markers,style}) => {
         <>
         {!attempts &&
             <>
-                {markers[0] && me && <button disabled={disabled || attempts} style={{cursor:disabled || attempts && 'no-drop'}} onClick={guess} className={style.guessBtn}>Дать Ответ</button> }
+                {markers[0] && me && <button disabled={disabled || attempts} style={{cursor:disabled || attempts && 'no-drop'}} onClick={guess} className={style.guessBtn}>Guess</button> }
             </>
         }
         </>

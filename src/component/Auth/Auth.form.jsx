@@ -44,6 +44,7 @@ const AuthForm = ({style,route,redirect}) => {
         }
     }
     const intHandler = (e) =>{
+
         setInt({...int,[e.target.type]: e.target.value})
     }
     React.useEffect(()=>{
@@ -58,7 +59,7 @@ const AuthForm = ({style,route,redirect}) => {
             {route === 'sign' &&
             <div>
                 <p className={`${error && style.errorRed}`}>Name</p>
-                <input value={int.text} onChange={intHandler} type="text"/>
+                <input value={int.text} onChange={intHandler} type="text" pattern="[A-Za-z]"/>
             </div>
             }
             <div>

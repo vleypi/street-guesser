@@ -23,7 +23,7 @@ export const useAuth = () =>{
         localStorage.removeItem('data')
     },[])
     useEffect(()=>{
-        const data = JSON.parse(localStorage.getItem('data'))
+        let data = eval('[' + localStorage.getItem('data') + ']')[0]
         if(data && data.JWT){
             loginAuth(data.JWT,data.id)
         }

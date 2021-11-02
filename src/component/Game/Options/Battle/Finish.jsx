@@ -54,37 +54,37 @@ const Finish = ({style}) => {
                                 />
                             </div>
                             {vis.info._id === id ?
-                                <h2>Ты побеждаешь!</h2> :
-                                <h2>{vis.info.name} побеждает!</h2>
+                                <h2>You won!</h2> :
+                                <h2>{vis.info.name} won!</h2>
                             }
                             <div className={style.statistics}>
                                 {vis.info._id === id &&
                                     <>
-                                        <h3>Моя статистика</h3>
-                                        <p>Правильных овтетов - {Math.round(vis.info.correct / (vis.info.correct+vis.info.incorrect) * 100) || 0}%</p>
-                                        <p>Правильных - {vis.info.correct}</p>
-                                        <p>Неправильных - {vis.info.incorrect}</p>
+                                        <h3>My statistic</h3>
+                                        <p>Correct answers - {Math.round(vis.info.correct / (vis.info.correct+vis.info.incorrect) * 100) || 0}%</p>
+                                        <p>Correct - {vis.info.correct}</p>
+                                        <p>Incorrect - {vis.info.incorrect}</p>
                                     </>
                                 }
                                 {vis.my  &&
                                     <>
-                                        <h3>Моя статистика</h3>
-                                        <p>Правильных овтетов - {Math.round(vis.my.correct / (vis.my.correct+vis.my.incorrect) * 100) || 0}%</p>
-                                        <p>Правильных - {vis.my.correct}</p>
-                                        <p>Неправильных - {vis.my.incorrect}</p>
+                                        <h3>My statistic</h3>
+                                        <p>Correct answers - {Math.round(vis.my.correct / (vis.my.correct+vis.my.incorrect) * 100) || 0}%</p>
+                                        <p>Correct - {vis.my.correct}</p>
+                                        <p>Incorrect - {vis.my.incorrect}</p>
                                     </>
                                 }
                                 {vis.info._id !== id && !vis.my &&
                                     <>
-                                        <h3>Статистика {vis.info.name}</h3>
-                                        <p>Правильных овтетов - {Math.round(vis.info.correct / (vis.info.correct+vis.info.incorrect) * 100) || 0}%</p>
-                                        <p>Правильных - {vis.info.correct}</p>
-                                        <p>Неправильных - {vis.info.incorrect}</p>
+                                        <h3>Statistic {vis.info.name}</h3>
+                                        <p>Correct answers - {Math.round(vis.info.correct / (vis.info.correct+vis.info.incorrect) * 100) || 0}%</p>
+                                        <p>Correct - {vis.info.correct}</p>
+                                        <p>Incorrect - {vis.info.incorrect}</p>
                                     </>
                                 }
                             </div>
                             <div className={style.popUpBtns}>
-                                <button onClick={leave}  className={style.leave}>Выйти</button>
+                                <button onClick={leave}  className={style.leave}>Quit</button>
                             </div>
                         </div>
                     }
@@ -97,22 +97,22 @@ const Finish = ({style}) => {
                                     />
                                 </div>
                                 {vis.info._id === id ?
-                                    <h2>Ты вылетаешь...</h2> :
-                                    <h2>{vis.info.name} вылетает</h2>
+                                    <h2>You are out...</h2> :
+                                    <h2>{vis.info.name} is out</h2>
                                 }
                                 <div className={style.statistics}>
-                                    <h3>Статистика {vis.info.name}</h3 >
-                                    <p>Правильных овтетов - {Math.round(vis.info.correct / (vis.info.correct+vis.info.incorrect) * 100) || 0}%</p>
-                                    <p>Правильных - {vis.info.correct}</p>
-                                    <p>Неправильных - {vis.info.incorrect}</p>
+                                    <h3>Statistic {vis.info.name}</h3 >
+                                    <p>Correct answers - {Math.round(vis.info.correct / (vis.info.correct+vis.info.incorrect) * 100) || 0}%</p>
+                                    <p>Correct - {vis.info.correct}</p>
+                                    <p>Incorrect - {vis.info.incorrect}</p>
                                 </div>
                                 {vis.info._id === id ?
                                     <div className={style.popUpBtns}>
                                         <button onClick={leave} className={style.leave}>Выйти</button>
-                                        <p>Следующий раунд через...<Time style={style} vis={vis} history={history}/></p>
+                                        <p>Next round in...<Time style={style} vis={vis} history={history}/></p>
                                     </div> :
                                     <div>
-                                        <p>Следующий раунд через...<Time style={style} vis={vis} history={history}/></p>
+                                        <p>Next round in...<Time style={style} vis={vis} history={history}/></p>
                                     </div>
                                 }
                             </div>

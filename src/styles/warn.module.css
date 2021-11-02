@@ -1,13 +1,11 @@
 .warn{
-    height: calc(100vh - 60px);
+    height: calc(100vh - 51px);
     width: 100%;
     text-align: center;
     position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    background: rgb(255,255,255);
-    background: linear-gradient(137deg, rgba(255,255,255,1) 0%, rgba(231,244,254,1) 99%, rgba(191,225,252,1) 100%, rgba(33,150,243,1) 100%);
 }
 .info{
     max-width: 800px;
@@ -163,7 +161,6 @@
 }
 .info p span{
     text-transform: uppercase;
-    font-weight: bold;
     color: #1d5479;;
 }
 .info button{

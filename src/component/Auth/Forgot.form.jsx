@@ -36,6 +36,7 @@ const ForgotForm = ({style,route,redirect}) => {
             </div>
             <div className={style.formButtons}>
                 <button disabled={btnDis} onClick={forgotPass}>Enter email</button> 
+                <button disabled={btnDis} onClick={()=>redirect.replace('/auth')} style={{background: '#ff2c2c', marginLeft: '10px'}}>Back</button> 
             </div>
             <p style={{color: 'red', marginTop: '10px', textShadow: '1px 3px 9px rgba(150, 150, 150, 1)'}}>{error}</p>
         </form> 

@@ -7,7 +7,7 @@ const Players = () => {
     const state = useSelector(state => state)
     return (
         <div className={style.players}>
-        <h2 style={{textAlign: 'center'}}>Игроки</h2>
+        <h2 style={{textAlign: 'center'}}>Players</h2>
         {state.game.players.map((it,index)=>(
             <div className={style.playerGame} key={it.id+'_'+index}>                 
                     <p className={style.playerName}>{it.name}</p>

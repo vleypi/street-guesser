@@ -1,7 +1,6 @@
 
 .lobby{
-
-    height: calc(100vh - 60px);
+    height: calc(100vh - 51px);
     width: 100%;
     text-align: center;
     background: rgb(255,255,255);
@@ -135,7 +134,7 @@
 }
 
 .TimeToStart{
-    margin-top: 50px;
+    margin: 50px;
     height: 80px;
 }
 .TimeToStart h3{
@@ -175,7 +174,7 @@
 .lobby .loaderOpen{
     z-index: 3;
     width: 100%;
-    height: calc(100% - 60px);
+    height: calc(100vh - 51px);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -274,7 +273,6 @@
     border-radius: 50%;
     transition: 0.1s;
     font-size: 21px;
-    font-weight: bold;
     color: #004e83;
 }
 .compound .single:hover,.multi:hover{
@@ -282,6 +280,13 @@
 }
 
 @media (max-width:820px){
+    .lobby .loaderOpen h2{
+        font-size: 35px;
+    }
+    .lobby .loaderStartExpect{
+        width: 13px;
+        height: 13px;
+    }
     .lobbyPlayer{
         width: 70%;
         height: 30px;
