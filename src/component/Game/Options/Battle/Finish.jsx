@@ -31,7 +31,7 @@ const Finish = ({style}) => {
         setVis(null)
     },[loc])
     const leave = () =>{
-        history.push('/home')
+        history.push('/')
         window.location.reload()
     }
 
