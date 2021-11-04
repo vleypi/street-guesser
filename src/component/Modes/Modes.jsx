@@ -5,18 +5,18 @@ import style from '../../styles/modes.module.css'
 import Popup from './Popup'
 
 export const modes = [
-    {name: 'Battle Royale',option: 'world',mode: 'BattleRoyale'},
-    {name: 'Battle Distance',option: 'world',mode: 'Points'},
-    
+    {nameMode: 'Battle Royale',name: 'World', option: 'world',mode: 'BattleRoyale'},
+    {nameMode: 'Battle Distance',name: 'World',option: 'world',mode: 'Points'},
 ]
 export const places = [
-    {name: 'World', option: 'world', mode: 'Points'},
-    {name: 'Italy', option: 'italy',mode: 'Points'},
-    {name: 'Russia', option: 'russia',mode: 'Points'},
-    {name: 'Germany', option: 'germany',mode: 'Points'},
-    {name: 'France', option: 'france',mode: 'Points'},
-    {name: 'USA', option: 'United States of America',mode: 'Points'},
-    {name: 'Spain', option: 'spain',mode: 'Points'},
+    {name: 'World', option: 'world', mode: 'Points', id: 'world'},
+    {name: 'Italy', option: 'it',mode: 'Points'},
+    {name: 'Russia', option: 'ru',mode: 'Points'},
+    {name: 'Germany', option: 'de',mode: 'Points'},
+    {name: 'France', option: 'fr',mode: 'Points'},
+    {name: 'USA',option: 'us',mode: 'Points'},
+    {name: 'Spain',option: 'es',mode: 'Points'},
+    {name: 'All countries', option: '/countries'}
 ]
 
 const Modes = () => {
@@ -30,7 +30,12 @@ const Modes = () => {
             setPop({popup: true,reason: 'lobby'})
         }
         else if(profile.isActivated){
-            history.push('/create/'+it.mode+'/'+it.option)
+            if(it.option === '/countries'){
+                history.push('/countries')
+            }
+            else{
+                history.push(`/create/${it.mode}/${it.name}`)
+            }
         }
         else if(!profile.JWT){
             setPop({popup: true,reason: 'signin'})
@@ -49,14 +54,14 @@ const Modes = () => {
         <div className={style.start}>
             <section className={style.mode}>
                 {modes.map((it,index)=>(
-                    <div key={it.mode+'_'+it.option+'_'+index} onClick={()=>routes(it)}>
-                        <p>{it.name}</p>
+                    <div key={it.mode+'_'+it.id+'_'+index} onClick={()=>routes(it)}>
+                        <p>{it.nameMode}</p>
                     </div>
                 ))}
             </section>
             <section className={style.places}>
                 {places.map((it,index)=>(
-                    <div className={style.modes}  key={it.mode+'_'+it.option+'_'+index} onClick={()=>routes(it)} >
+                    <div className={style.modes}  key={it.mode+'_'+it.id+'_'+index} onClick={()=>routes(it)} >
                         <p>{it.name} <span></span></p>
                     </div>
                 ))}

@@ -14,6 +14,7 @@
 }
 
 
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -21,7 +22,6 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  scroll-behavior: smooth;
   background: rgb(255,255,255);
     background: linear-gradient(137deg, rgba(255,255,255,1) 0%, rgba(231,244,254,1) 99%, rgba(191,225,252,1) 100%, rgba(33,150,243,1) 100%);
 }
@@ -45,10 +45,13 @@ code {
   font-weight: 200;
 }
 /* хром, сафари */
-*::-webkit-scrollbar { width: 0; }
-
-/* ie 10+ */
-* { -ms-overflow-style: none; }
-
-/* фф (свойство больше не работает, других способов тоже нет)*/
-* { overflow: -moz-scrollbars-none; }
+/* *::-webkit-scrollbar { width: 0; } */
+::-webkit-scrollbar { /* chrome based */
+  width: 0; 
+  background: transparent; 
+}
+html {
+  -ms-overflow-style: none;  
+  scrollbar-width: none; 
+  overflow: -moz-scrollbars-none
+}

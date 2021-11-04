@@ -59,7 +59,7 @@ const Map = ({style}) => {
                 center={centerMap}
                 onClick={putMarker}
                 mapContainerStyle={mapContainerStyleMap}
-                options={{streetViewControl: false,scrollwheel: true,mapTypeControl: false,fullscreenControl: false,disableDefaultUI: true}}
+                options={{streetViewControl: false,scrollwheel: true,mapTypeControl: false,fullscreenControl: false,disableDefaultUI: true, draggableCursor: 'crosshair', draggingCursor: 'crosshair'}}
             >
                 {markers.length > 0 &&
                     markers.map((marker)=>(
@@ -99,4 +99,5 @@ export default Map
 const mapContainerStyleMap = {
     height: "900px",
     width: "900px",
+    cursor: 'crosshair'
 };

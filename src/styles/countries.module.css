@@ -1,0 +1,95 @@
+.countries{
+    width: 100vw;
+    height: calc(100vh - 51px);
+    display: flex;
+}
+
+.maps{
+    width: calc(100vw - 300px);
+    height: calc(100vh - 51px)
+}
+
+svg{
+    margin: 100px 0;
+    width: 100%;
+    height: 80%;
+}
+svg rect{
+    fill: transparent;
+}
+path{
+    fill: #a7dcff9d;
+}
+
+.th,.th path{
+    fill: rgb(52, 152, 219);
+}
+
+.th:hover path , .th:hover{
+    fill: rgb(20, 103, 158);
+    transition: 0.2s;
+    cursor: pointer;
+}
+
+.CountriesLIST{
+    scroll-behavior: smooth;
+    z-index: 10;
+    width: 300px;
+    background: #ffffff;
+    /* background: #daf0ff; */
+    color: rgb(4, 54, 87);
+    text-align: center;
+    -webkit-box-shadow: -8px 0px 10px 0px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: -8px 0px 10px 0px rgba(0, 0, 0, 0.2);
+    box-shadow: -8px 0px 10px 0px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
+.scrollCountries{
+    overflow: scroll; 
+    height: 100%;
+    color: rgb(4, 54, 87);
+}
+
+.scrollCountries {
+    scrollbar-width: auto;
+    scrollbar-color: #34679e #ffffff;
+  }
+
+  /* Chrome, Edge, and Safari */
+  .scrollCountries::-webkit-scrollbar {
+    width: 10px;
+  }
+
+.scrollCountries::-webkit-scrollbar-track {
+    background: #ffffff;
+}
+
+.scrollCountries::-webkit-scrollbar-thumb {
+    background-color: #34679e;
+    border-radius: 10px;
+    border: 1px solid #ffffff;
+  }
+
+.CountriesLIST h1{
+    font-size: 24px;
+    margin: 20px 0;
+}
+.countriesITEM{
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    cursor: pointer;
+}
+.countriesITEM img{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+.countriesITEM p{
+    font-size: 18px;
+    color: #000000;
+}
+.countriesITEM:hover{
+    background: #ddf2ff;
+}

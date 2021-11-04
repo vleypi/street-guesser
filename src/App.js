@@ -1,7 +1,7 @@
 import React from 'react'
 import { useAuth } from './hooks/useAuth'
 import {  useSelector } from 'react-redux'
-import { useHistory} from 'react-router'
+import { useHistory, useLocation} from 'react-router'
 import {Switch,Route } from 'react-router-dom'
 import Auth from './pages/Auth'
 import Main from './pages/Main'
@@ -12,18 +12,25 @@ import Game from './component/Game/Game'
 import Lobby from './pages/Lobby'
 import Mode from './pages/Mode'
 import ConfirmWarn from './component/General/ConfirmWarn'
+import game from './redux/actions/game'
 
 const App = () => {
   useAuth()
   const state = useSelector(state => state)
   const history = useHistory()
+  const location = useLocation()
   React.useEffect(()=>{
     window.addEventListener('keyup',(e)=>{
       if(e.key === 'Escape'){
         history.goBack()
       }
     })
-  },[history])
+  },[])
+  React.useEffect(()=>{
+    if(state.game.locs && location !== '/game'){
+      history.replace('/game')
+    }
+  },[location])
   return (
     <>
       <Switch>

@@ -10,6 +10,7 @@ import { setLobby } from '../redux/actions/lobby'
 import { socket } from '../hooks/useAuth'
 import {modes,places} from '../component/Modes/Modes'
 import Popup from '../component/Modes/Popup'
+import { countriesList } from '../component/Countries/CountriesLIST'
 
 const Mode = () => {
     const params = useParams()
@@ -18,14 +19,19 @@ const Mode = () => {
     const profile = useSelector(({profile})=>profile)
     const {request} = useFetch()
     const [searching,setSearching] = React.useState(false)
+
     React.useEffect(()=>{
-        if(places.findIndex(it=>it.option === params.option) === -1){
+        if(countriesList.findIndex(it=>it.name === params.option) === -1){
             history.replace('/404')
         }
         else if(modes.findIndex(it=>it.mode === params.mode) === -1){
             history.replace('/404')
         }
+        else if(params.mode === 'BattleRoyale' && params.option !== 'World'){
+            history.replace('/404')
+        }
     },[modes,places,params])
+
     const seacrh = async (it) =>{
             history.block()
             setSearching('animationOpen')
@@ -108,8 +114,8 @@ const Mode = () => {
             <div className={style.content}>
                 <div className={style.compoundContent}>
                 <div className={style.infoCompound}>
-                    <h1 className={style.compoundMode}>{params.mode.charAt(0).toUpperCase() + params.mode.slice(1)}</h1>
-                    <h4 className={style.compoundOption}>{params.option.charAt(0).toUpperCase() + params.option.slice(1)}</h4>
+                    <h1 className={style.compoundMode}>{params.mode}</h1>
+                    <h4 className={style.compoundOption}>{params.option}</h4>
                 </div>
                 <div className={style.compound}>
                     <div onClick={()=>params.mode == 'BattleRoyale' ? popupHandler('singleAndBattleRoyale') : seacrh('single')} className={style.single}>
