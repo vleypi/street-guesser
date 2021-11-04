@@ -3,6 +3,7 @@ import { useSelector } from 'react-redux'
 import { useHistory } from 'react-router'
 import CountriesLIST from '../component/Countries/CountriesLIST'
 import CountriesSVG from '../component/Countries/CountriesSVG'
+import InfoCountries from '../component/Countries/InfoCountries'
 import style from '../styles/countries.module.css'
 
 const Countries = () => {
@@ -14,10 +15,15 @@ const Countries = () => {
         }
     },[])
     return (
+        <>
         <div className={style.countries}>
-            <CountriesSVG />
-            <CountriesLIST />
+            <div className={style.countriesContent}>
+                <CountriesSVG />
+                <CountriesLIST />
+            </div>
+            <InfoCountries />
         </div>
+        </>
     )
 }
 

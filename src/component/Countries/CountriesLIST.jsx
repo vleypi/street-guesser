@@ -83,8 +83,8 @@ import { useHistory } from 'react-router'
 export const countriesList = [
     {option: 'world', name: 'World', img: world},
     {option: 'ae', name: 'United Arab Emirates', img: ae},
-    {option: 'al', name: 'Alnbania', img: ae, img: al},
-    {option: 'am', name: 'Areminia', img: am},
+    {option: 'al', name: 'Albania', img: ae, img: al},
+    {option: 'am', name: 'Armenia', img: am},
     {option: 'ar', name: 'Argentina', img: ar},
     {option: 'au', name: 'Australia', img: au},
     {option: 'at', name: 'Austria', img: at},
@@ -162,22 +162,35 @@ export const countriesList = [
 ]
 
 const CountriesLIST = () => {
+
     const history = useHistory()
+    const [show,setShow] = React.useState(false)
     const route = (it) =>{
         history.push(`/create/Points/${it.name}`)
     }
     return (
-        <div className={style.CountriesLIST}>
+        <>
+        <button
+            onClick={()=>setShow(!show)}
+            className={`${style.showCountries}`}
+        >
+            {show ? 'close' : 'list'}
+        </button>
+        <div className={`${style.CountriesLIST} ${show && style.CountriesLISTSHOW}`}>
             <h1>List of all countries</h1>
             <div className={style.scrollCountries}>
-            {countriesList.map((it)=>(
-                <div onClick={()=>route(it)} className={style.countriesITEM}>
-                    <img src={it.img} />
-                    <p>{it.name}</p>
+                {countriesList.map((it)=>(
+                    <div onClick={()=>route(it)} className={style.countriesITEM}>
+                        <img src={it.img} />
+                        <p>{it.name}</p>
+                    </div>
+                ))}
+                <div>
+                    <p style={{fontSize: '11px', margin: '10px 0'}}>Not all countries have enough cameras to play them.</p>
                 </div>
-            ))}
             </div>
         </div>
+        </>
     )
 }
 

@@ -1,7 +1,8 @@
-.countries{
+.countriesContent{
     width: 100vw;
     height: calc(100vh - 51px);
     display: flex;
+    position: relative;
 }
 
 .maps{
@@ -35,6 +36,7 @@ path{
     scroll-behavior: smooth;
     z-index: 10;
     width: 300px;
+    height: 100%;
     background: #ffffff;
     /* background: #daf0ff; */
     color: rgb(4, 54, 87);
@@ -46,16 +48,15 @@ path{
 }
 .scrollCountries{
     overflow: scroll; 
-    height: 100%;
+    height: calc(100vh - 51px - 51px);
     color: rgb(4, 54, 87);
 }
 
-.scrollCountries {
+/* .scrollCountries {
     scrollbar-width: auto;
     scrollbar-color: #34679e #ffffff;
   }
 
-  /* Chrome, Edge, and Safari */
   .scrollCountries::-webkit-scrollbar {
     width: 10px;
   }
@@ -68,7 +69,7 @@ path{
     background-color: #34679e;
     border-radius: 10px;
     border: 1px solid #ffffff;
-  }
+  } */
 
 .CountriesLIST h1{
     font-size: 24px;
@@ -92,4 +93,55 @@ path{
 }
 .countriesITEM:hover{
     background: #ddf2ff;
+}
+.showCountries{
+    display: none;
+    border: none;
+    font-size: 18px;
+}
+
+.showCountries:active{
+    background: rgba(0, 132, 255, 0.795);
+}
+
+.infoAboutCountries{
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    font-size: 21px;
+}
+
+@media (max-width:820px){
+    .countriesContent{
+        overflow: hidden;
+    }
+    .CountriesLIST{
+        position: absolute;
+        right: 0;
+        width: 100%;
+        transform: translateX(110%);
+        transition: 0.4s;
+    }
+    .CountriesLISTSHOW{
+        transform: translateX(0%);
+    }
+    .showCountries{
+        display: block;
+        position: absolute;
+        bottom: 20px;
+        right: 20px;
+        z-index: 11;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        color: white;
+        background: rgb(0, 132, 255);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+    }
+    .maps{
+        width: 100%;
+    }
 }
