@@ -15,8 +15,8 @@ const Header = () => {
             </div>
             <div className={style.user}>
                 {profile.JWT ?
-                    <p>{profile.name}</p> :
-                    <button onClick={()=>history.replace('/push')} className={style.signin}>Sign in</button>
+                    <p onClick={()=>history.push('/profile')}>{profile.name}</p> :
+                    <button onClick={()=>history.replace('/auth')} className={style.signin}>Sign in</button>
                 }
             </div>
         </div>

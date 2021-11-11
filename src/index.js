@@ -5,12 +5,11 @@ import App from './App';
 import { Provider } from 'react-redux';
 import store from './redux/store';
 import { BrowserRouter } from 'react-router-dom';
-import AppTest from './AppTest';
 
 ReactDOM.render(
     <Provider store={store}>
         <BrowserRouter>
-          <AppTest />
+          <App />
         </BrowserRouter>
     </Provider>,
   document.getElementById('root')

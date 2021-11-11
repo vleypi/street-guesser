@@ -16,7 +16,6 @@ export const places = [
     {name: 'France', option: 'fr',mode: 'Points'},
     {name: 'USA',option: 'us',mode: 'Points'},
     {name: 'Spain',option: 'es',mode: 'Points'},
-    {name: 'All countries', option: '/countries'}
 ]
 
 const Modes = () => {
@@ -30,12 +29,7 @@ const Modes = () => {
             setPop({popup: true,reason: 'lobby'})
         }
         else if(profile.isActivated){
-            if(it.option === '/countries'){
-                history.push('/countries')
-            }
-            else{
-                history.push(`/create/${it.mode}/${it.name}`)
-            }
+            history.push(`/create/${it.mode}/${it.name}`)
         }
         else if(!profile.JWT){
             setPop({popup: true,reason: 'signin'})
@@ -65,6 +59,9 @@ const Modes = () => {
                         <p>{it.name} <span></span></p>
                     </div>
                 ))}
+                <div className={style.modes} onClick={()=>history.push('/countries')} >
+                    <p>All Countries <span></span></p>
+                </div>
             </section>
         </div>
         </>

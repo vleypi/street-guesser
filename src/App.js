@@ -1,88 +1,69 @@
 import React from 'react'
 import { useAuth } from './hooks/useAuth'
 import {  useSelector } from 'react-redux'
-import { useHistory, useLocation} from 'react-router'
+import { Redirect, useHistory} from 'react-router'
 import {Switch,Route } from 'react-router-dom'
 import Auth from './pages/Auth'
-import Main from './pages/Main'
 import Home from './pages/Home'
 import Header from './component/General/Header'
-import Warn from './component/General/Warn'
 import Game from './component/Game/Game'
 import Lobby from './pages/Lobby'
 import Mode from './pages/Mode'
 import ConfirmWarn from './component/General/ConfirmWarn'
-import game from './redux/actions/game'
+import ErrorPage from './component/General/404'
+import Test from './pages/Test'
+import Countries from './pages/Countries'
+import Profile from './pages/Profile'
+import ViewProfile from './pages/ViewProfile'
+import Settings from './pages/Settings'
 
-const App = () => {
+const AppTest = () => {
   useAuth()
   const state = useSelector(state => state)
   const history = useHistory()
-  const location = useLocation()
   React.useEffect(()=>{
     window.addEventListener('keyup',(e)=>{
       if(e.key === 'Escape'){
         history.goBack()
       }
     })
-  },[])
-  React.useEffect(()=>{
-    if(state.game.locs && location !== '/game'){
-      history.replace('/game')
-    }
-  },[location])
+  },[history])
   return (
     <>
-      <Switch>
-        <Route path="/"  exact component={Main}/>
-        {state.profile.JWT ?
-          <>
-            <Header />
-            {!state.profile.isActivated && <ConfirmWarn />}
-              {
-                !state.profile.warn ?
-                <Switch>
-                  {!state.game.locs ?  
-                    <>
-                      <Route path="/home" exact component={Home} />
-                      {state.profile.isActivated &&
-                        <>
-                          <Route path="/home/create/:mode/:option" exact component={Mode} />
-                          <Route path="/home/lobby" component={Lobby}/>
-                        </>
-                      }
-                      <Route path="/rules" exact component={Rules} />
-                      <Route path="*" exact component={ErrorComp} />
-                    </> :
-                    <>
-                      <Route path="/home/game" exact component={Game}/>
-                    </>
-                  }
-                </Switch>:
-                <Warn />
-              } 
-          </> :
-          <Switch>
-            <Route path="/auth" exact component={Auth} />
-            <Route path="/auth/resetpassword" exact component={Auth} />
-            <Route path="/auth/newpassword/:link" exact component={Auth} />
-          </Switch>
-        }
-        
-      </Switch>
+    <Header />
+    {state.profile.isActivated === false && <ConfirmWarn />}
+    <Switch>
+      <Route path="/" exact component={Home} />
+      {state.profile.JWT ?
+        <Switch>
+          <Route path="/profile" exact component={Profile} />
+          <Route path="/profile/:id" exact component={ViewProfile} />
+          <Route path="/countries" exact component={Countries} />
+          <Route path="/settings" exact component={Settings} />
+          <Route path="/rules" exact component={Rules} />
+          {!state.profile.isActivated && <Redirect to="/" />}
+          <Route path="/create/:mode/:option" exact component={Mode} />
+          <Route path="/lobby" exact component={Lobby}/>
+          {state.game.locs && <Route path="/game" component={Game}/>}
+          <Route path="*" component={ErrorPage} />
+        </Switch> :
+        <Switch>
+          <Route path="/auth" exact component={Auth} />
+          <Route path="/auth/resetpassword" exact component={Auth} />
+          <Route path="/auth/newpassword/:link" exact component={Auth} />
+          <Route path="/countries" exact component={Countries} />
+          <Route path="/profile/:id" exact component={ViewProfile} />
+          <Route path="*" component={ErrorPage} />
+        </Switch>
+      }
+
+    </Switch>
     </>
   )
 }
 
-export default App
+export default AppTest
 
-const ErrorComp = () =>{
-  return(
-    <div>
-      ffsdfdsfds
-    </div>
-  )
-}
 const Rules = () =>{
   return(
     <div>rules</div>

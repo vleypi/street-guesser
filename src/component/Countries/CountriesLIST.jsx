@@ -165,9 +165,16 @@ const CountriesLIST = () => {
 
     const history = useHistory()
     const [show,setShow] = React.useState(false)
+    const [search,setSearch] = React.useState('')
     const route = (it) =>{
         history.push(`/create/Points/${it.name}`)
     }
+    const countriesListSearch = countriesList.filter(it=>{
+        return it.name.toLocaleLowerCase().includes(search.toLocaleLowerCase())
+    })
+    const searchHandler = (e) =>{
+        setSearch(e.target.value)
+    } 
     return (
         <>
         <button
@@ -178,15 +185,16 @@ const CountriesLIST = () => {
         </button>
         <div className={`${style.CountriesLIST} ${show && style.CountriesLISTSHOW}`}>
             <h1>List of all countries</h1>
+            <input autoFocus={true} value={search} onChange={searchHandler}/>
             <div className={style.scrollCountries}>
-                {countriesList.map((it)=>(
+                {countriesListSearch.map((it)=>(
                     <div onClick={()=>route(it)} className={style.countriesITEM}>
                         <img src={it.img} />
                         <p>{it.name}</p>
                     </div>
                 ))}
                 <div>
-                    <p style={{fontSize: '11px', margin: '10px 0'}}>Not all countries have enough cameras to play them.</p>
+                    <p style={{fontSize: '13px', margin: '15px 0'}}>Not all countries in the world have enough google-streetview to play them.</p>
                 </div>
             </div>
         </div>

@@ -11,7 +11,7 @@
 }
 
 .guessMaps{
-    cursor: ;
+    cursor: crosshair;
     overflow: hidden;
     width: 300px;
     height: 300px;
@@ -335,11 +335,25 @@ background: linear-gradient(0deg, rgba(0,144,75,1) 0%, rgba(183,255,195,1) 100%)
     align-items: center;
     justify-content:space-between;
     text-align: center;
+    padding: 0 10px;
 }
 .playerName{
     min-width: 90px;
     max-width: 90px;
     font-size: 20px;
+}
+.playerNameAvatar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.playerNameAvatar svg{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+.playerNameAvatar div p:nth-child(2){
+    font-size: 15px;
 }
 .playerPts{
     min-width: 90px;
@@ -352,9 +366,6 @@ background: linear-gradient(0deg, rgba(0,144,75,1) 0%, rgba(183,255,195,1) 100%)
     align-items: center;
     padding: 5px;
     border-radius: 20px;
-    -webkit-box-shadow: 0px 1px 20px -2px rgba(0, 0, 0, 0.2);
-    -moz-box-shadow: 0px 1px 20px -2px rgba(0, 0, 0, 0.2);
-    box-shadow: 0px 1px 20px -2px rgba(0, 0, 0, 0.2);
 }
 .playerCountries{
     width: 35px;

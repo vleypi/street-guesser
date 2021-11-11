@@ -19,7 +19,14 @@ const Mode = () => {
     const profile = useSelector(({profile})=>profile)
     const {request} = useFetch()
     const [searching,setSearching] = React.useState(false)
-
+    const country = async () =>{
+        try{
+            
+        }
+        catch(err){
+            console.log(err)
+        }
+    }
     React.useEffect(()=>{
         if(countriesList.findIndex(it=>it.name === params.option) === -1){
             history.replace('/404')
@@ -29,6 +36,9 @@ const Mode = () => {
         }
         else if(params.mode === 'BattleRoyale' && params.option !== 'World'){
             history.replace('/404')
+        }
+        else{
+
         }
     },[modes,places,params])
 
@@ -40,6 +50,8 @@ const Mode = () => {
                     const data = await request('/api/lobby/search','POST',
                         {
                             name: profile.name,
+                            shortid: profile.shortid,
+                            avatar: profile.avatar,
                             mode: params.mode,
                             option: params.option,
                             game: it
@@ -65,7 +77,8 @@ const Mode = () => {
                             rd: 0,
                             mode: data.lobby.mode,
                             players: data.lobby.users.length,
-                            game: it
+                            game: it,
+                            _id: profile.id
                         })
                     }
                     setTimeout(()=>{

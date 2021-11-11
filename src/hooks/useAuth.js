@@ -19,7 +19,7 @@ export const useAuth = () =>{
         dispatch(setProfileThunk(JWT,id))
     },[])
     const logoutAuth = useCallback(()=>{
-        dispatch(setProfile(null,null))
+        dispatch(setProfile(null,null,null,null,null,null,null,null,null,null,null,null,null,null))
         localStorage.removeItem('data')
     },[])
     useEffect(()=>{
@@ -47,5 +47,5 @@ export const useAuth = () =>{
             dispatch(userLeave(msg, JSON.parse(localStorage.getItem('data')).id))
         })
     },[])
-    return {loginAuth,logoutAuth}
+    return {loginAuth}
 }

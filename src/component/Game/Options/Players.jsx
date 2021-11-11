@@ -2,6 +2,7 @@ import React from 'react'
 import { useSelector } from 'react-redux'
 import style from '../../../styles/maps.module.css'
 import correct from '../../../image/check.png'
+import Avatar from '../../General/Avatar'
 
 const Players = () => {
     const state = useSelector(state => state)
@@ -10,7 +11,13 @@ const Players = () => {
         <h2 style={{textAlign: 'center'}}>Players</h2>
         {state.game.players.map((it,index)=>(
             <div className={style.playerGame} key={it.id+'_'+index}>                 
-                    <p className={style.playerName}>{it.name}</p>
+                    <div className={style.playerNameAvatar}>
+                        <Avatar profile={it}/>
+                        <div>
+                            <p className={style.playerName}>{it.name}</p>
+                            {state.game.mode === 'BattleRoyale' && <p className={style.playerPts} style={{color: it.points < 0 && 'red'}}>{it.points}</p>}
+                        </div>
+                    </div>
                     {state.game.mode === 'BattleRoyale' &&
                     <div className={style.playerGuessed}>
                     {it.tries.map((it2,index)=>(
@@ -33,7 +40,7 @@ const Players = () => {
                     ))}
                     {Array(3 - it.tries.length).fill(<div className={style.emptyGap}></div>)}
                     </div>}
-                    <p className={style.playerPts} style={{color: it.points < 0 && 'red'}}>{it.points}</p>
+                    {state.game.mode === 'Points' && <p className={style.playerPts} style={{color: it.points < 0 && 'red'}}>{it.points}</p>}
                 </div>
         ))}
         </div>

@@ -1,0 +1,131 @@
+.profile{
+    width: 100%;
+    height: 100%;
+}
+.profileContent{
+    height: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 10px;
+}
+.avatar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 100px;
+    margin-bottom: 20px;
+}
+.avatar svg{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+.avatarNick{
+    font-size: 21px;
+    margin: 10px 0;
+    color: #00548b;
+    display: flex;
+    align-items: center;
+}
+.avatarNick img{
+    width: 20px;
+    height: 20px;
+    margin-left: 5px;
+    cursor: pointer;
+    transform: scale(0.9);
+}
+.avatarNick img:hover{
+    transition: 0.2s;
+    transform: scale(1);
+}
+.contentStatProfile{
+    text-align: center;
+}
+.contentStatProfile h1{
+    margin-bottom: 20px;
+    color: #3498db;
+    text-shadow: 0px 1px 3px rgba(150, 150, 150, 1);
+}
+.titleStat{
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+    align-items: center;
+}
+.likeViews{
+    display: flex;
+}
+.likeViews img{
+    width: 30px;
+    height: 30px;
+    margin-right: 5px;
+    cursor: pointer;
+    transition: 0.1s;
+}
+.likeViews .like{
+    opacity: 0.7;
+}
+.likeViews .like:hover{
+    opacity: 0.8;
+}
+.likeViews div{
+    display: flex;
+    align-items: center;
+    margin: 0 10px
+}
+.profileStat{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 170px 170px;
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+    text-align: center;
+    margin-bottom: 52px
+}
+.profileStat div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: #d1edff;
+    border-radius: 20px;
+    height: 170px;
+    color: #3498db;
+    text-shadow: 0px 1px 3px rgba(150, 150, 150, 1);
+    -webkit-box-shadow: 0px 5px 13px 0px rgba(34, 60, 80, 0.2);
+    -moz-box-shadow: 0px 5px 13px 0px rgba(34, 60, 80, 0.2);
+    box-shadow: 0px 5px 13px 0px rgba(34, 60, 80, 0.2);
+}
+.profileStat div h2{
+    font-size: 21px;
+}
+.profileStat div p{
+    font-size: 32px;
+}
+.avatarIMG{
+    position: relative;
+    width: 100px;
+    height: 100px;
+}
+.settings{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 1px #3498db solid;
+    background: #ffffffb7;
+    opacity: 0;
+    transition: 0.3s;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.settings img{
+    width: 50px;
+}
+.settings:hover{
+    opacity: 1;
+}

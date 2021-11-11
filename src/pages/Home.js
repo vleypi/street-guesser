@@ -4,6 +4,7 @@ import Modes from '../component/Modes/Modes'
 import style from '../styles/home.module.css'
 import Question from '../component/General/Question'
 import {useFetch} from '../hooks/useFetch'
+import avatar from '../image/avatar.svg'
 
 const Home = () => {
     return (

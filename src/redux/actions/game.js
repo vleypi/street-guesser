@@ -26,7 +26,7 @@ const game = (state=initialState,action) =>{
     }
     else if(action.type === 'SET_PLAYERS'){
         const mapPlayers = action.players.map((it)=>{
-            return {_id: it._id, name: it.name,points: it.points, tries: []}
+            return {_id: it._id, name: it.name,points: it.points, tries: [], avatar: it.avatar}
         })
         return{
             ...state,
