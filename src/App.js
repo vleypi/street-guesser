@@ -16,6 +16,7 @@ import Countries from './pages/Countries'
 import Profile from './pages/Profile'
 import ViewProfile from './pages/ViewProfile'
 import Settings from './pages/Settings'
+import CountryPage from './pages/CountryPage'
 
 const AppTest = () => {
   useAuth()
@@ -39,6 +40,7 @@ const AppTest = () => {
           <Route path="/profile" exact component={Profile} />
           <Route path="/profile/:id" exact component={ViewProfile} />
           <Route path="/countries" exact component={Countries} />
+          <Route path="/country/:name" exact component={CountryPage} />
           <Route path="/settings" exact component={Settings} />
           <Route path="/rules" exact component={Rules} />
           {!state.profile.isActivated && <Redirect to="/" />}
@@ -52,6 +54,7 @@ const AppTest = () => {
           <Route path="/auth/resetpassword" exact component={Auth} />
           <Route path="/auth/newpassword/:link" exact component={Auth} />
           <Route path="/countries" exact component={Countries} />
+          <Route path="/country/:name" exact component={CountryPage} />
           <Route path="/profile/:id" exact component={ViewProfile} />
           <Route path="*" component={ErrorPage} />
         </Switch>

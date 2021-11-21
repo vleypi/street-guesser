@@ -7,7 +7,7 @@ import { useHistory } from 'react-router';
 const CountriesSVG = () => {
     const history = useHistory()
     const route = (item) =>{
-        history.push('/create/Points/'+item)
+        history.push('/country/'+item)
     }
     return (
         <TransformWrapper 

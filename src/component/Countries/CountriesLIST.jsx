@@ -79,6 +79,7 @@ import vn from '../../image/countries/vn.svg'
 import za from '../../image/countries/za.svg'
 import world from '../../image/world.svg'
 import { useHistory } from 'react-router'
+import { NavLink } from 'react-router-dom'
 
 export const countriesList = [
     {option: 'world', name: 'World', img: world},
@@ -166,9 +167,7 @@ const CountriesLIST = () => {
     const history = useHistory()
     const [show,setShow] = React.useState(false)
     const [search,setSearch] = React.useState('')
-    const route = (it) =>{
-        history.push(`/create/Points/${it.name}`)
-    }
+    
     const countriesListSearch = countriesList.filter(it=>{
         return it.name.toLocaleLowerCase().includes(search.toLocaleLowerCase())
     })
@@ -188,10 +187,10 @@ const CountriesLIST = () => {
             <input autoFocus={true} value={search} onChange={searchHandler}/>
             <div className={style.scrollCountries}>
                 {countriesListSearch.map((it)=>(
-                    <div onClick={()=>route(it)} className={style.countriesITEM}>
+                    <NavLink to={`/country/${it.name}`} className={style.countriesITEM}>
                         <img src={it.img} />
                         <p>{it.name}</p>
-                    </div>
+                    </NavLink>
                 ))}
                 <div>
                     <p style={{fontSize: '13px', margin: '15px 0'}}>Not all countries in the world have enough google-streetview to play them.</p>

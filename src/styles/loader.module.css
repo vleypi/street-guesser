@@ -90,9 +90,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100px;
-    height: 100px;
-    border: 2px white dashed;
+    width: 40px;
+    height: 40px;
+    border: 2px #3498db dashed;
     border-radius: 50%;
     animation: load infinite 4s linear;
 }
